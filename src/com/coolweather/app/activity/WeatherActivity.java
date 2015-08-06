@@ -66,8 +66,8 @@ public class WeatherActivity extends Activity implements OnClickListener {
 		temp1Text = (TextView) findViewById(R.id.temp1);
 		temp2Text = (TextView) findViewById(R.id.temp2);
 		currentDateText = (TextView) findViewById(R.id.current_date);
-		//switchCity = (Button) findViewById(R.id.switch_city);
-		//refreshWeather = (Button) findViewById(R.id.refresh_weather);
+		switchCity = (Button) findViewById(R.id.switch_city);
+		refreshWeather = (Button) findViewById(R.id.refresh_weather);
 		String countyCode = getIntent().getStringExtra("county_code");
 		//String countyCode = "101190404";
 		if (!TextUtils.isEmpty(countyCode)) {
@@ -80,14 +80,14 @@ public class WeatherActivity extends Activity implements OnClickListener {
 			// 没有县级代号时就直接显示本地天气
 			showWeather();
 		}
-		//switchCity.setOnClickListener(this);
-		//refreshWeather.setOnClickListener(this);
+		switchCity.setOnClickListener(this);
+		refreshWeather.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		/*case R.id.switch_city:
+		case R.id.switch_city:
 			Intent intent = new Intent(this, ChooseAreaActivity.class);
 			intent.putExtra("from_weather_activity", true);
 			startActivity(intent);
@@ -102,7 +102,7 @@ public class WeatherActivity extends Activity implements OnClickListener {
 			}
 			break;
 		default:
-			break;*/
+			break;
 		}
 	}
 
